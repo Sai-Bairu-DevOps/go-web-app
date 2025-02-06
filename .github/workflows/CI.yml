@@ -65,7 +65,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-app:${{github.run_id}}    
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}devops-zero-hero:${{github.run_id}}    
 
 
   update-newtag-in-helm-chart:
@@ -85,8 +85,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.email "abhishek@gmail.com"
-        git config --global user.name "Abhishek Veeramalla"
+        git config --global user.email "saikumar.b939k@gmail.com"
+        git config --global user.name "Sai-Bairu-DevOps"
         git add helm/go-web-app-chart/values.yaml
         git commit -m "Update tag in Helm chart"
         git push
