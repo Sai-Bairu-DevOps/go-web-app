@@ -4,4 +4,4 @@ image:
   repository: 73962/devops-zero-hero
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "13182162974"
+  tag: "13182906753"
