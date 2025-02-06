@@ -14,9 +14,9 @@ RUN go build -o sai .
 
 FROM gcr.io/distroless/base 
 
-COPY --from=Base /app/sai .
+COPY --from=Base /APP/sai .
 
-COPY --from=base /app/static ./static
+COPY --from=base /APP/static ./static
 
 EXPOSE  8080
 
