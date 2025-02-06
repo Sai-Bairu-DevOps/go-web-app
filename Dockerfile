@@ -4,7 +4,7 @@ WORKDIR /APP
 
 COPY go.mod .
 
-RUN go mod downoload
+RUN go mod download
 
 COPY . .
 
