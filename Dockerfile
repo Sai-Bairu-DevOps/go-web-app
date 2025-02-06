@@ -1,4 +1,4 @@
-FROM golang:1.21 as Base
+FROM golang:1.21 as base
 
 WORKDIR /APP
 
@@ -14,9 +14,9 @@ RUN go build -o sai .
 
 FROM gcr.io/distroless/base 
 
-COPY --from=Base /APP/sai .
+COPY --from=base /APP/sai .
 
-COPY --from=Base /APP/static ./static
+COPY --from=base /APP/static ./static
 
 EXPOSE  8080
 
