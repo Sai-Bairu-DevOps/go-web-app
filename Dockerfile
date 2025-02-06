@@ -16,7 +16,7 @@ FROM gcr.io/distroless/base
 
 COPY --from=Base /APP/sai .
 
-COPY --from=base /APP/static ./static
+COPY --from=Base /APP/static ./static
 
 EXPOSE  8080
 
