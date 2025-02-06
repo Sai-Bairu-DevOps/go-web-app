@@ -1,10 +1,10 @@
-FROM golang:1.21 as Base
+FROM golang:1.22.5 as base
 
 WORKDIR /APP
 
 COPY go.mod .
 
-RUN go mod downoload
+RUN go mod download
 
 COPY . .
 
@@ -14,9 +14,9 @@ RUN go build -o sai .
 
 FROM gcr.io/distroless/base 
 
-COPY --from=Base /app/sai .
+COPY --from=base /APP/sai .
 
-COPY --from=base /app/static ./static
+COPY --from=base /APP/static ./static
 
 EXPOSE  8080
 
